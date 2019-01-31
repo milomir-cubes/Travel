@@ -177,7 +177,7 @@ public class Car {
     public void getIn(int numberOfPassengers) {
         if (this.currentPassengers + numberOfPassengers <= this.seats) {
             this.currentPassengers = this.currentPassengers + numberOfPassengers;
-            System.out.println("Ušlo je: " + numberOfPassengers);
+            System.out.println("Ušlo je: " + numberOfPassengers + "putnik/a.");
         } else {
             System.out.println("Nema dovoljno mesta");
         }

@@ -26,6 +26,7 @@ public class Main {
        
         
         Car volvo = new Car();
+        volvo.setModel("Volvo");
        
         volvo.printAttributes();
 //        volvo.getIn();
@@ -39,6 +40,12 @@ public class Main {
         volvo.printAttributes();
         
         volvo.getIn(4);
+        volvo.printAttributes();
+        
+        volvo.getOut(4);
+        volvo.printAttributes();
+        
+        volvo.getIn(2);
         volvo.printAttributes();
         
     }
