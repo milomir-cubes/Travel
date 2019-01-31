@@ -23,6 +23,24 @@ public class Main {
         bmw.travel(6);
         bmw.printAttributes();
         
+       
+        
+        Car volvo = new Car();
+       
+        volvo.printAttributes();
+//        volvo.getIn();
+//        volvo.getIn();
+//        volvo.getIn();
+//        volvo.getIn();
+//        volvo.getIn();
+//        volvo.getIn();
+//        volvo.getIn();
+        volvo.getIn(3);
+        volvo.printAttributes();
+        
+        volvo.getIn(4);
+        volvo.printAttributes();
+        
     }
     
 }

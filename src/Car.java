@@ -10,7 +10,10 @@ public class Car {
     private int currentFuel;
     private int maxFuel;
     private int consumption; //per 1 km
-
+    
+    private int seats;
+    private int currentPassengers;
+    
     public Car() {
         this.model = "Demo";
         this.maxSpeed = 120;
@@ -20,6 +23,8 @@ public class Car {
         this.maxFuel = 50;
         this.consumption = 1;
         this.currentFuel = 50;
+        this.seats = 5;
+        this.currentPassengers = 1;
     }
 
     public Car(String customModel, String customLicense) {
@@ -37,6 +42,72 @@ public class Car {
         this.maxFuel = maxFuel;
         this.consumption = consumption;
     }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public void setMaxSpeed(int maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+
+    public String getLicense() {
+        return license;
+    }
+
+    public void setLicense(String license) {
+        this.license = license;
+    }
+
+    public double getMileage() {
+        return mileage;
+    }
+
+    public void setMileage(double mileage) {
+        this.mileage = mileage;
+    }
+
+    public int getCurrentFuel() {
+        return currentFuel;
+    }
+
+    public void setCurrentFuel(int currentFuel) {
+        this.currentFuel = currentFuel;
+    }
+
+    public int getMaxFuel() {
+        return maxFuel;
+    }
+
+    public void setMaxFuel(int maxFuel) {
+        this.maxFuel = maxFuel;
+    }
+
+    public int getSeats() {
+        return seats;
+    }
+
+    public void setSeats(int seats) {
+        this.seats = seats;
+    }
+
+    public int getCurrentPassengers() {
+        return currentPassengers;
+    }
+
+    public void setCurrentPassengers(int currentPassengers) {
+        this.currentPassengers = currentPassengers;
+    }
+    
+    
     
     public void printAttributes() {
         System.out.println("Model: " + this.model);
@@ -46,19 +117,10 @@ public class Car {
         System.out.println("Kilometraža: " + this.mileage);
         System.out.println("Potrošnja: " + this.consumption);
         System.out.println("Stanje rezervoara: " + this.currentFuel);
+        System.out.println("Broj putnika je: " + this.currentPassengers);
+        System.out.println("Broj mesta je: " + this.seats);
+
         System.out.println();
-    }
-    
-    public void setWeight(double customWeight) {
-        this.weight = customWeight;
-    }
-    
-    public double getWeight() {
-        return this.weight;
-    }
-    
-    public void setConsumption(int customConsumption) {
-        this.consumption = customConsumption;
     }
     
     public void travel(int distance) {
@@ -81,4 +143,36 @@ public class Car {
         System.out.println("U automobil " + this.model + " je sipano " + fuiled + "  litara goriva");
     }
 
+    /**
+     * Increments number of passengers by 1.
+     */
+    public void getIn() {
+       if (this.currentPassengers + 1 <= this.seats) {
+           this.currentPassengers = this.currentPassengers + 1;
+           System.out.println("Ušao je jedan putnik");
+       } else {
+           System.out.println("Nema dovoljno mesta");
+       }
+    }
+    
+    /**
+     * Increments number of passengers by passed number.
+     * @param numberOfPassengers 
+     */
+    public void getIn(int numberOfPassengers) {
+        if (this.currentPassengers + numberOfPassengers <= this.seats) {
+           this.currentPassengers = this.currentPassengers + numberOfPassengers;
+           System.out.println("Ušlo je: " + numberOfPassengers);
+       } else {
+           System.out.println("Nema dovoljno mesta");
+       }
+    }
+    
+    public void getOut() {
+        
+    }
+    
+    public void getOut(int numberOfPassengers) {
+        
+    }
 }
